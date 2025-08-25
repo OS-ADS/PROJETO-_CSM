@@ -1,36 +1,35 @@
 # PROJETO-_CSM
 o grande projeto dos meninos de programa do ADS
 
-# 📌 Projeto de Computaria
+# 📌 É os Menino da TI
 
 ## 👥 Membros da Equipe
 
-- **Jorge Augusto** – Formação: [Owner]  
+- **[Jorge Augusto](https://github.com/JorgeBackendDev)** – Formação: [Owner/Developer]  
   🔹 Linguagens: [Kotlin, Python, Lua...]  
   🔹 Ferramentas: [GitHub, MySQL, Docker...]  
-
-- **Ygor Belarmino** – Formação: [Developer]  
+ 
+-  **[Ygor Belarmino](https://github.com/Mercurykz)** – Formação: [Dev-Full Stack]  
   🔹 Linguagens: [C#, Java, HTML...]  
   🔹 Ferramentas: [Git, MySQL, VSCode...]  
 
-- **Kauan Martes** – Formação: [Developer/Back-end]  
+- **[Kauan Martes](https://github.com/KauanM99)** – Formação: [Developer/Back-end]  
   🔹 Linguagens: [Java, PHP, JavaScript...]  
   🔹 Ferramentas: [Postman, Figma, VSCode...]  
 
-- **Guilherme Nogueira** – Formação: [Dev-Full stack]  
+- **[Guilherme Nogueira](https://github.com/GuilhermeNgr)** – Formação: [Developer/Back-end]  
   🔹 Linguagens: [Java, HTML, CSS...]  
   🔹 Ferramentas: [GitHub, VSCode, Git...]  
 
 ---
 
 ## 📖 Sobre o Projeto
-Breve descrição sobre o objetivo do projeto, problema que resolve e motivação.  
-
+Em desenvolvimento....
 ---
 
 ## 🛠️ Tecnologias Utilizadas
-- Linguagens: [Java, Css]  
-- Frameworks/Bibliotecas: [listar]  
-- Ferramentas: [listar]  
+- Linguagens: [Não Listado]  
+- Frameworks/Bibliotecas: [Não Listado]  
+- Ferramentas: [Não Listado]  
 
 
