@@ -3,6 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const content = document.getElementById('ajax-content');
     const navLinks = document.querySelectorAll('nav ul.nav-links li a');
 
+function loadPage(page) {
+    const PAGE_PATH = './'; // ou './pages/' se as páginas estiverem numa pasta
+}
+
+    
     // Add a single persistent transitionend event listener to remove 'transition-in' class
     content.addEventListener('transitionend', () => {
         content.classList.remove('transition-in');
@@ -168,3 +173,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
