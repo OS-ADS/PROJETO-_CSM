@@ -1,95 +1,170 @@
-// Utilidades
-const $ = (sel, scope=document) => scope.querySelector(sel)
-const $$ = (sel, scope=document) => [...scope.querySelectorAll(sel)]
+document.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.querySelector('.sidebar');
+    const content = document.getElementById('ajax-content');
+    const navLinks = document.querySelectorAll('nav ul.nav-links li a');
 
-// Ano atual no rodapé
-$('#ano').textContent = new Date().getFullYear()
+    // Add a single persistent transitionend event listener to remove 'transition-in' class
+    content.addEventListener('transitionend', () => {
+        content.classList.remove('transition-in');
+    });
 
-// Menu móvel
-const navToggle = $('#navToggle')
-const nav = $('#primaryNav')
-navToggle?.addEventListener('click', () => {
-  const isOpen = nav.classList.toggle('open')
-  navToggle.setAttribute('aria-expanded', String(isOpen))
-})
+    function loadPage(page) {
+        content.classList.add('transition-out');
 
-// Modal de Login
-const loginModal = $('#loginModal')
-const openButtons = ['#openLogin', '#openLoginHero'].map(id => $(id)).filter(Boolean)
-const closeButton = $('#closeLogin')
+        setTimeout(() => {
+            if (page === 'home') {
+                content.innerHTML = `
+                    <h1>Bem-Vindo a Voices of the Dark Wiki</h1>
+                    <p>Esta wiki é dedicada ao jogo Voices of the Dark, um modo de jogo altamente modificado do jogo Garry's Mod. Apresenta combate tático e jogabilidade de extração. Use a navegação para explorar craftings, sobre a empresa, mecânicas de jogo e muito mais.</p>
+                `;
+                content.classList.remove('transition-out');
+                content.classList.add('transition-in');
+                return;
+            }
 
-function openModal(){
-  loginModal.classList.add('open')
-  loginModal.setAttribute('aria-hidden', 'false')
-  // Foco no primeiro campo
-  setTimeout(() => $('input[name="email"]', loginModal)?.focus(), 50)
-}
-function closeModal(){
-  loginModal.classList.remove('open')
-  loginModal.setAttribute('aria-hidden', 'true')
-}
-openButtons.forEach(btn => btn.addEventListener('click', openModal))
-closeButton?.addEventListener('click', closeModal)
-loginModal?.addEventListener('click', (e) => {
-  if (e.target.matches('[data-close-modal]')) closeModal()
-})
-window.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && loginModal?.classList.contains('open')) closeModal()
-})
+            fetch(page + '.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Page not found');
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    content.innerHTML = html;
 
-// Mostrar/ocultar senha
-const togglePassBtn = $('.toggle-pass')
-const passInput = $('input[name="senha"]')
+                    initFAQAccordion();
 
-togglePassBtn?.addEventListener('click', () => {
-  const isPass = passInput.getAttribute('type') === 'password'
-  passInput.setAttribute('type', isPass ? 'text' : 'password')
-})
+                    content.classList.remove('transition-out');
+                    content.classList.add('transition-in');
+                })
+                .catch(error => {
+                    content.innerHTML = '<p>Desculpe, tivemos um erro para carregar a pagina.</p>';
+                    content.classList.remove('transition-out');
+                    content.classList.add('transition-in');
+                });
+        }, 500);
+    }
 
-// Validação simples de formulário
-const loginForm = $('#loginForm')
-loginForm?.addEventListener('submit', (e) => {
-  e.preventDefault()
-  const email = loginForm.email.value.trim()
-  const senha = loginForm.senha.value.trim()
+    // Attach click listeners to nav links excluding submenu toggles
+    navLinks.forEach(link => {
+        if (!link.classList.contains('submenu-toggle')) {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = link.getAttribute('data-page');
+                loadPage(page);
+            });
+        }
+    });
 
-  let ok = true
+    // submenus porra
+    const submenuToggles = document.querySelectorAll('.submenu-toggle');
 
-  // E-mail
-  const emailError = $('[data-error-for="email"]', loginForm)
-  if (!email){
-    emailError.textContent = 'Informe seu e‑mail.'
-    ok = false
-  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){
-    emailError.textContent = 'E‑mail inválido.'
-    ok = false
-  } else {
-    emailError.textContent = ''
-  }
+    submenuToggles.forEach(submenuToggle => {
+        const submenuParent = submenuToggle.parentElement;
+        submenuToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            submenuParent.classList.toggle('open');
+        });
+    });
 
-  // Senha
-  const passError = $('[data-error-for="senha"]', loginForm)
-  if (!senha){
-    passError.textContent = 'Informe sua senha.'
-    ok = false
-  } else if (senha.length < 6){
-    passError.textContent = 'Mínimo de 6 caracteres.'
-    ok = false
-  } else {
-    passError.textContent = ''
-  }
+    // Add event listeners for submenu items
+    const submenuLinks = document.querySelectorAll('.submenu-items li a');
+    submenuLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const page = link.getAttribute('data-page');
+            loadPage(page);
+        });
+    });
 
-  if (!ok) return
+    function initFAQAccordion() {
+        const faqButtons = document.querySelectorAll('.faq-question');
+        faqButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    }
 
-  // Simula sucesso de autenticação
-  loginForm.querySelector('button[type="submit"]').disabled = true
-  loginForm.querySelector('button[type="submit"]').textContent = 'Entrando…'
+    // Load home2 page on site load (do not question on what happend with home1 )
+    loadPage('home2');
 
-  setTimeout(() => {
-    alert('Login realizado com sucesso!')
-    loginForm.reset()
-    loginForm.querySelector('button[type="submit"]').disabled = false
-    loginForm.querySelector('button[type="submit"]').textContent = 'Entrar'
-    closeModal()
-  }, 800)
-})
+    // Login Modal Functionality
+    const loginLink = document.getElementById('login-link');
+    const modal = document.getElementById('login-modal');
+    const closeBtn = document.querySelector('.close');
+    const loginForm = document.getElementById('login-form');
+    const loginError = document.getElementById('login-error');
+
+    // Open modal
+    loginLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.style.display = 'block';
+        loginError.textContent = '';
+    });
+
+    // Close modal
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+        loginError.textContent = '';
+    });
+
+    // Close modal on outside click
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            loginError.textContent = '';
+        }
+    });
+
+    // Handle login form submit
+    loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        try {
+            const response = await fetch('users.txt');
+            const text = await response.text();
+            const users = text.split('\n').map(line => line.trim()).filter(line => line);
+
+            let authenticated = false;
+            for (const user of users) {
+                const [u, p] = user.split(':');
+                if (u === username && p === password) {
+                    authenticated = true;
+                    break;
+                }
+            }
+
+            if (authenticated) {
+                modal.style.display = 'none';
+                // Generate random number #0100 to #9999
+                const randomNum = Math.floor(Math.random() * (9999 - 100 + 1)) + 100;
+                const hashtag = `#${randomNum.toString().padStart(4, '0')}`;
+                // Load terminal welcome screen
+                content.classList.add('transition-out');
+                setTimeout(() => {
+                    content.innerHTML = `
+                        <div class="terminal-screen">
+> Bem-Vindo ${username}-${hashtag}
+> Acesso concedido ao sistema.
+> Preparando interface...
+                        </div>
+                    `;
+                    content.classList.remove('transition-out');
+                    content.classList.add('transition-in');
+                    // After 3 seconds, load home2 page
+                    setTimeout(() => {
+                        loadPage('home2');
+                    }, 3000);
+                }, 500);
+            } else {
+                loginError.textContent = 'Login incorreto. Tente novamente.';
+            }
+        } catch (error) {
+            loginError.textContent = 'Erro ao carregar dados de usuário.';
+        }
+    });
+});
