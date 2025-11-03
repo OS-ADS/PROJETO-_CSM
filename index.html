@@ -1,145 +1,95 @@
-<!doctype html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Minha Home — Login Responsivo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header" id="topo">
-      <div class="container header-wrap">
-        <a class="brand" href="#topo" aria-label="Página inicial">Meninos Do<span>TI</span></a>
-        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Abrir menu">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-        <nav class="nav" id="primaryNav">
-          <ul>
-            <li><a href="#features">Recursos</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#contato">Contato</a></li>
-          </ul>
-          <div class="nav-cta">
-            <button class="btn btn-ghost" id="openLogin">Entrar</button>
-            <a class="btn" href="#cadastro">Criar conta</a>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <h1>Tudo que você precisa em um só lugar</h1>
-          <p>ainda estamos decidindo o tema do  projeto logo mudaremos a home </p>
-          <div class="hero-actions">
-            <a href="#features" class="btn">Explorar</a>
-            <button class="btn btn-ghost" id="openLoginHero">Fazer login</button>
-          </div>
+    <title>Voices of the Dark Wiki</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="image/VODFAVICON.jpeg" type="image/png">
+    
+</head>
+<body>
+
+    <header> 
+        <div class="logo"><img src="image/VOD_Com_Circu.png"> VOICES OF THE DARK WIKI
+
         </div>
-        <div class="hero-card" aria-hidden="true">
-          <div class="card">
-            <h3>Resumo do dia</h3>
-            <ul class="checks">
-              <li>⚡ Desempenho otimizado</li>
-              <li>📱 Totalmente responsivo</li>
-              <li>🔒 Login com validação</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section" id="features">
-      <div class="container">
-        <h2 class="section-title">Recursos</h2>
-        <div class="features-grid">
-          <article class="feature">
-            <div class="feature-icon">💎</div>
-            <h3>Design limpo</h3>
-            <p>Tipografia legível, bom contraste e espaçamentos pensados para leitura confortável.</p>
-          </article>
-          <article class="feature">
-            <div class="feature-icon">⚙️</div>
-            <h3>Vanilla JS</h3>
-            <p>Sem dependências externas para controle de modal, menu móvel e validação.</p>
-          </article>
-          <article class="feature">
-            <div class="feature-icon">🧩</div>
-            <h3>Componentes reutilizáveis</h3>
-            <p>Botões, cartões e formulário prontos para reaproveitar em outros projetos.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-    <section class="section alt" id="sobre">
-      <div class="container about-grid">
-        <div>
-          <h2 class="section-title">Sobre o projeto</h2>
-          <p>aqui iremos colocar mais informaçoes</p>
-          <ul class="list">
-            <li>HTML semântico</li>
-            <li>CSS moderno com variáveis</li>
-            <li>JavaScript enxuto</li>
-          </ul>
-        </div>
-        <div class="about-card">
-          <div class="card">
-            <h3>Pronto para produção</h3>
-            <p>Estrutura base com cabeçalho fixo, seção hero, grid de recursos e modal de login acessível.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section" id="contato">
-      <div class="container narrow">
-        <h2 class="section-title">Entre em contato</h2>
-        <p>Precisa de algo específico? Envie um e‑mail para <a href="mailto:contato@seudominio.com">contato@seudominio.com</a>.</p>
-      </div>
-    </section>
-    <footer class="site-footer">
-      <div class="container footer-wrap">
-        <p>© <span id="ano"></span> BrandLogo. Todos os direitos reservados.</p>
         <nav>
-          <a href="#privacidade">Privacidade</a>
-          <a href="#termos">Termos</a>
+            <ul class="nav-links">
+                <li><a href="#" data-page="home2">HOME</a></li>
+                <li><a href="#" data-page="discord">DISCORD</a></li>
+                <li><a href="#" data-page="servidor">SERVIDOR</a></li>
+                <li><a href="#" data-page="sobre">SOBRE</a></li>
+                <li><a href="#" id="login-link">LOGIN</a></li>
+            </ul>
         </nav>
-      </div>
-    </footer>
-    <div class="modal" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle" aria-hidden="true">
-      <div class="modal-backdrop" data-close-modal></div>
-      <div class="modal-content">
-        <button class="modal-close" id="closeLogin">×</button>
-        <h2 id="loginTitle">Entrar na conta</h2>
-        <form class="form" id="loginForm" novalidate>
-          <label class="field">
-            <span>E‑mail</span>
-            <input type="email" name="email" placeholder="voce@exemplo.com" required />
-            <small class="error" data-error-for="email"></small>
-          </label>
-          <label class="field">
-            <span>Senha</span>
-            <div class="password-wrap">
-              <input type="password" name="senha" placeholder="••••••••" minlength="6" required />
-              <button type="button" class="toggle-pass">👁️</button>
-            </div>
-            <small class="error" data-error-for="senha"></small>
-          </label>
-          <div class="form-row">
-            <label class="checkbox">
-              <input type="checkbox" name="lembrar" />
-              <span>Lembrar de mim</span>
-            </label>
-            <a class="link" href="#recuperar">Esqueci minha senha</a>
-          </div>
-          <button class="btn btn-block" type="submit">Entrar</button>
-          <p class="hint">Não tem conta? <a class="link" href="#cadastro">Cadastre-se</a></p>
-        </form>
-      </div>
+    </header>
+    <main>
+        <aside class="sidebar">
+            <h2>CONTEUDO</h2>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#" data-page="introduction">Introdução</a></li>
+                    <li class="submenu">
+                        <a href="#" class="submenu-toggle" data-page="mecanicasjogo">Mecânicas de jogo <span class="arrow">▼</span></a>
+                        <ul class="submenu-items">
+                            <li><a href="#" data-page="crafting">Crafting</a></li>
+                            <li><a href="#" data-page="armadura">Armaduras</a></li>
+                            <li><a href="#" data-page="eventos">Eventos Ambientais</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu">
+                        <a href="#" class="submenu-toggle" data-page="mapas">Mapas <span class="arrow">▼</span></a>
+                        <ul class="submenu-items">
+                            <li><a href="#" data-page="gm_fork">GM_Fork</a></li>
+                            <li><a href="#" data-page="gm_boreas">GM_Boreas</a></li>
+                            <li><a href="#" data-page="rp_apocalypse">RP_Apocalypse</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" data-page="faq">FAQ</a></li>
+                    <li><a href="#" data-page="armas">Armas</a></li>
+                    <a href="http://127.0.0.1:5500/changelogs-standalone.html">Noticias & Updates</a>
+                </ul>
+            </nav>
+        </aside>
+    
+<section class="content" id="ajax-content">
+            <h1></h1>
+            <p></p>
+        </section>
+
+    </main>
+    <footer>
+        <div style="max-width: 1000px; margin: auto; text-align: center;">
+        <h2 style="color: #FF4F00;">🌐 Junte-se à Comunidade</h2>
+        <p>Participe, envie feedbacks, compartilhe clipes e ajude a moldar o futuro do servidor!</p>
+        <div style="margin-top: 30px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+            <span><img src="image/discordtest.png" alt="" width="4%"><a href="https://discord.gg/dYza3rd5Xy" style="color: #7289DA; font-size: 1.2rem;">Discord</a></span>
+            <a href="#" style="color: #66c0f4; font-size: 1.2rem;">🎮 Steam Group</a>
+            <a href="https://www.youtube.com/@NexusRPnetworks" style="color: #FF0000; font-size: 1.2rem;">📺 YouTube</a>
+            <a href="#" style="color: #ff0050; font-size: 1.2rem;">🎥 TikTok</a>
+        </div>
     </div>
+    © 2025 Voices of the Dark. Projeto independente criado com Garry’s Mod. Este site não é afiliado à Facepunch Studios ou à Valve.
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Entrar</button>
+            </form>
+            <div id="login-error" style="color: #f39c12; margin-top: 10px;"></div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
-  </body>
+
+</body>
 </html>
