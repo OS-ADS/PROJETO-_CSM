@@ -1,0 +1,199 @@
+<!--como usar este arquivo HTML standalone
+
+<span class="read-more" data-modal="novoModal">Clique aqui</span> 
+
+e para imagem
+<span class="read-more" data-modal="imagemModal">Ver imagem</span>
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voices of the Dark - Changelogs & Eventos</title>
+    <link rel="stylesheet" href="style-standalone.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="image/VODFAVICON.jpeg" type="image/png">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="image/VOD_Com_Circu.png" alt="Voices of the Dark">
+                Changelogs & Eventos
+            </div>
+            <a href="index.html" class="back-btn">← Voltar ao Wiki</a>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="changelogs-content">
+            <h1 class="page-title">🚀 Changelogs & Eventos</h1>
+            
+            <!-- Filter Controls -->
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="feature">✨ Features</button>
+                <button class="filter-btn" data-filter="event">🎮 Eventos</button>
+                <button class="filter-btn" data-filter="bug">🐛 Bug Fixes</button>
+                <button class="filter-btn" data-filter="balance">⚖️ Balanceamento</button>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-number">12</span>
+                    <span class="stat-label">Updates Recentes</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Eventos Ativos</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">47</span>
+                    <span class="stat-label">Bugs Corrigidos</span>
+                </div>
+            </div>
+
+            <!-- Timeline Container -->
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <!-- Update Item - Enhanced -->
+                <div class="update-item feature fade-in" data-category="feature">
+                    <div class="timeline-dot"></div>
+                    <div class="update-badge new">NOVO</div>
+                    
+                    <div class="update-header">
+                        <h3>🚀 Update BETA 0.75 - MultiThread Revolution</h3>
+                        <time datetime="2025-01-15">Julho 20, 2025</time>
+                        <div class="update-tags">
+                            <span class="tag feature">Performance</span>
+                            <span class="tag feature">Backend</span>
+                        </div>
+                    </div>
+                    
+                    <div class="update-preview">
+                        <p>Diversas Otimizações e modificação do lua para suporte a MultiThread. 
+                        <span class="read-more" data-modal="update1">Ver mais...</span></p>
+                    </div>
+                </div>
+
+                <!-- Update Item - Event -->
+                <div class="update-item event fade-in" data-category="event">
+                    <div class="timeline-dot"></div>
+                    <div class="update-badge event">EVENTO</div>
+                    
+                    <div class="update-header">
+                        <h3>🎮 Evento: Invasão Zumbi</h3>
+                        <time datetime="2025-06-15">Junho 15-30, 2025</time>
+                        <div class="update-tags">
+                            <span class="tag event">Temporário</span>
+                            <span class="tag event">PvE</span>
+                        </div>
+                    </div>
+                    
+                    <div class="update-preview">
+                        <p>Evento especial de 2 semanas com hordas de zumbis, loot exclusivo e recompensas únicas!
+                        <span class="read-more" data-modal="event1">Ver detalhes...</span></p>
+                    </div>
+                </div>
+
+                <!-- Update Item - Bug Fix -->
+                <div class="update-item bug fade-in" data-category="bug">
+                    <div class="timeline-dot"></div>
+                    <div class="update-badge bug">FIX</div>
+                    
+                    <div class="update-header">
+                        <h3>🛠️ Hotfix 0.74.1</h3>
+                        <time datetime="2025-06-10">Junho 10, 2025</time>
+                        <div class="update-tags">
+                            <span class="tag bug">Crítico</span>
+                            <span class="tag bug">Estabilidade</span>
+                        </div>
+                    </div>
+                    
+                    <div class="update-preview">
+                        <p>Correção de crash crítico ao craftar itens raros. Todos os servidores foram reiniciados.
+                        <span class="read-more" data-modal="bug1">Ver lista completa...</span></p>
+                    </div>
+                </div>
+
+                <!-- Update Item - Balance -->
+                <div class="update-item balance fade-in" data-category="balance">
+                    <div class="timeline-dot"></div>
+                    <div class="update-badge">BALANCE</div>
+                    
+                    <div class="update-header">
+                        <h3>⚖️ Balanceamento de Armas - Julho 2025</h3>
+                        <time datetime="2025-07-10">Julho 10, 2025</time>
+                        <div class="update-tags">
+                            <span class="tag balance">Armas</span>
+                            <span class="tag balance">PvP</span>
+                        </div>
+                    </div>
+                    
+                    <div class="update-preview">
+                        <p>Ajustes no dano e precisão de várias armas para melhor balanceamento no PvP.
+                        <span class="read-more" data-modal="balance1">Ver mudanças...</span></p>
+                    </div>
+                </div>
+            </div>
+
+    <!-- Upcoming Features Preview -->
+    <div class="roadmap-section">
+        <h2>🗓️ Próximas Atualizações</h2>
+        <div class="roadmap-timeline">
+            <div class="roadmap-item">
+                <div class="roadmap-date">Agosto 2025</div>
+                <div class="roadmap-content">
+                    <h4>Sistema de Facções Avançado</h4>
+                    <p>Gerenciamento de territórios, diplomacia entre facções</p>
+                    <div class="progress-mini">
+                        <div class="progress-mini-fill" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="roadmap-item">
+                <div class="roadmap-date">Setembro 2025</div>
+                <div class="roadmap-content">
+                    <h4>Novos Mapas: Zona de Guerra</h4>
+                    <p>Mapas urbanos destruídos com foco em combate CQB</p>
+                    <div class="progress-mini">
+                        <div class="progress-mini-fill" style="width: 45%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Signup -->
+    <div class="newsletter-section">
+        <h3>📧 Fique por dentro!</h3>
+        <p>Receba notificações de novas atualizações direto no seu email</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Seu email" required>
+            <button type="submit">Inscrever</button>
+        </form>
+    </div>
+</div>
+
+<!-- Bootstrap Modal -->
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal-title"></h5>
+      </div>
+      <div class="modal-body" id="modal-body">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script-standalone.js"></script>
+<script src="modal-content.js"></script>

@@ -1,0 +1,284 @@
+<div class="changelogs-content enhanced">
+    <h1 class="page-title">🚀 Changelogs & Eventos</h1>
+    
+    <!-- Filter Controls -->
+    <div class="filter-controls">
+        <button class="filter-btn active" onclick="filterUpdates('all')">Todos</button>
+        <button class="filter-btn" onclick="filterUpdates('feature')">✨ Features</button>
+        <button class="filter-btn" onclick="filterUpdates('event')">🎮 Eventos</button>
+        <button class="filter-btn" onclick="filterUpdates('bug')">🐛 Bug Fixes</button>
+        <button class="filter-btn" data-filter="balance">⚖️ Balanceamento</button>
+    </div>
+
+    <!-- Timeline Container -->
+    <div class="timeline-container">
+        <div class="timeline-line"></div>
+        
+        <!-- Update Item - Enhanced -->
+        <div class="update-item feature" data-category="feature">
+            <div class="timeline-dot"></div>
+            <div class="update-badge new">NOVO</div>
+            
+            <div class="update-header">
+                <h3>🚀 Update BETA 0.75 - MultiThread Revolution</h3>
+                <time datetime="2025-01-15">Julho 20, 2025</time>
+                <div class="update-tags">
+                    <span class="tag feature">Performance</span>
+                    <span class="tag feature">Backend</span>
+                </div>
+            </div>
+            
+            <div class="update-preview">
+                <p>Diversas Otimizações e modificação do lua para suporte a MultiThread. 
+                <button class="toggle-btn" onclick="toggleDetails(this)">Ver mais...</button></p>
+            </div>
+            
+            <div class="update-details" style="display: none;">
+                <ul class="feature-list">
+                    <li>✅ <strong>MultiThread Support:</strong> Agora o servidor pode utilizar múltiplos cores de CPU</li>
+                    <li>✅ <strong>50% mais performance</strong> em servidores com 4+ cores</li>
+                    <li>✅ <strong>Redução de 70%</strong> em lag spikes durante combates intensos</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Update Item - Event -->
+        <div class="update-item event" data-category="event">
+            <div class="timeline-dot"></div>
+            <div class="update-badge event">EVENTO</div>
+            
+            <div class="update-header">
+                <h3>🎮 Evento: Invasão Zumbi</h3>
+                <time datetime="2025-06-15">Junho 15-30, 2025</time>
+                <div class="update-tags">
+                    <span class="tag event">Temporário</span>
+                    <span class="tag event">PvE</span>
+                </div>
+            </div>
+            
+            <div class="update-preview">
+                <p>Evento especial de 2 semanas com hordas de zumbis, loot exclusivo e recompensas únicas!
+                <button class="toggle-btn" onclick="toggleDetails(this)">Ver detalhes...</button></p>
+            </div>
+            
+            <div class="update-details" style="display: none;">
+                <div class="event-info">
+                    <h4>📅 Período: 15-30 de Junho</h4>
+                    <h4>🎯 Objetivo: Sobreviver às hordas zumbis</h4>
+                    <h4>🏆 Recompensas: Skins exclusivas, armas lendárias</h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- Update Item - Bug Fix -->
+        <div class="update-item bug" data-category="bug">
+            <div class="timeline-dot"></div>
+            <div class="update-badge bug">FIX</div>
+            
+            <div class="update-header">
+                <h3>🛠️ Hotfix 0.74.1</h3>
+                <time datetime="2025-06-10">Junho 10, 2025</time>
+                <div class="update-tags">
+                    <span class="tag bug">Crítico</span>
+                    <span class="tag bug">Estabilidade</span>
+                </div>
+            </div>
+            
+            <div class="update-preview">
+                <p>Correção de crash crítico ao craftar itens raros. Todos os servidores foram reiniciados.
+                <button class="toggle-btn" onclick="toggleDetails(this)">Ver lista completa...</button></p>
+            </div>
+            
+            <div class="update-details" style="display: none;">
+                <ul class="bug-list">
+                    <li>🐛 <strong>Crash fix:</strong> Ao craftar itens com qualidade lendária</li>
+                    <li>🐛 <strong>Memory leak:</strong> Em longas sessões de jogo (>3h)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- More updates... -->
+    </div>
+
+    <!-- Inline JavaScript for AJAX compatibility -->
+    <script>
+        // Toggle details functionality
+        function toggleDetails(button) {
+            const details = button.parentElement.nextElementSibling;
+            const isVisible = details.style.display !== 'none';
+            
+            details.style.display = isVisible ? 'none' : 'block';
+            button.textContent = isVisible ? 'Ver mais...' : 'Ver menos...';
+        }
+
+        // Filter functionality
+        function filterUpdates(category) {
+            const updateItems = document.querySelectorAll('.update-item');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            
+            // Update active button
+            filterBtns.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter items
+            updateItems.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Auto-expire "NEW" badges after 7 days
+        document.addEventListener('DOMContentLoaded', function() {
+            const newBadges = document.querySelectorAll('.update-badge.new');
+            newBadges.forEach(badge => {
+                const timeElement = badge.closest('.update-item').querySelector('time');
+                if (timeElement) {
+                    const updateDate = new Date(timeElement.getAttribute('datetime'));
+                    const daysSinceUpdate = (new Date() - updateDate) / (1000 * 60 * 60 * 24);
+                    
+                    if (daysSinceUpdate > 7) {
+                        badge.style.display = 'none';
+                    }
+                }
+            });
+        });
+    </script>
+</div>
+
+<style>
+/* Enhanced Changelogs Styles - AJAX Compatible */
+.enhanced .filter-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.enhanced .filter-btn {
+    padding: 8px 16px;
+    border: 1px solid #FF4F00;
+    background: transparent;
+    color: #FF4F00;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.enhanced .filter-btn.active,
+.enhanced .filter-btn:hover {
+    background: #FF4F00;
+    color: #000;
+}
+
+.enhanced .timeline-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.enhanced .timeline-line {
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #FF4F00, transparent);
+}
+
+.enhanced .update-item {
+    position: relative;
+    margin-left: 60px;
+    margin-bottom: 30px;
+    background: rgba(0, 23, 46, 0.6);
+    border-radius: 8px;
+    padding: 25px;
+    border-left: none;
+}
+
+.enhanced .timeline-dot {
+    position: absolute;
+    left: -45px;
+    top: 25px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #FF4F00;
+    border: 3px solid #111;
+}
+
+.enhanced .update-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.enhanced .update-badge.new { background: #00ff88; color: #000; }
+.enhanced .update-badge.event { background: #ff6b35; color: #fff; }
+.enhanced .update-badge.bug { background: #ff4757; color: #fff; }
+
+.enhanced .update-tags {
+    display: flex;
+    gap: 8px;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.enhanced .tag {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+}
+
+.enhanced .tag.feature { background: rgba(0, 255, 136, 0.2); color: #00ff88; }
+.enhanced .tag.event { background: rgba(255, 107, 53, 0.2); color: #ff6b35; }
+.enhanced .tag.bug { background: rgba(255, 71, 87, 0.2); color: #ff4757; }
+
+.enhanced .toggle-btn {
+    background: none;
+    border: none;
+    color: #FF4F00;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: inherit;
+}
+
+.enhanced .feature-list,
+.enhanced .bug-list {
+    list-style: none;
+    padding: 0;
+}
+
+.enhanced .feature-list li,
+.enhanced .bug-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .enhanced .timeline-container {
+        margin-left: 20px;
+    }
+    
+    .enhanced .update-item {
+        margin-left: 30px;
+    }
+    
+    .enhanced .timeline-line {
+        left: 15px;
+    }
+    
+    .enhanced .timeline-dot {
+        left: -30px;
+    }
+}
+</style>
+
+<script src="script-fixed.js"></script>

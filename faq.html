@@ -1,0 +1,137 @@
+<section style="background-color: #0f0f0f; color: #eee; padding: 60px 20px;">
+  <div style="max-width: 1000px; margin: auto;">
+    <h2 style="text-align: center; color: #FF4F00;">❓ Perguntas Frequentes (FAQ)</h2>
+    <p style="text-align: center; max-width: 800px; margin: 20px auto;">
+      Tire suas dúvidas mais comuns sobre o universo de <strong>Voices of the Dark</strong>.
+    </p>
+
+    <!-- FAQ List -->
+    <div class="faq-container">
+      <!-- Item -->
+      <div class="faq-item">
+        <button class="faq-question">🎮 Como faço para jogar Voices of the Dark?</button>
+        <div class="faq-answer">
+          <p>Você precisa do Garry's Mod instalado. O acesso ao servidor e conteúdos adicionais estão na seção <a href="#info-servidor">Informações do Servidor</a>.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">🧠 Qual é o objetivo principal do jogo?</button>
+        <div class="faq-answer">
+          <p>Sobreviver e extrair com sucesso, coletando loot e evitando ameaças. A morte implica perda total naquela incursão.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">💾 Meu progresso é salvo entre partidas?</button>
+        <div class="faq-answer">
+          <p>Sim! Seu inventário, upgrades e estatísticas são salvos entre sessões com nosso sistema persistente.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">🖥️ Quais são os requisitos mínimos?</button>
+        <div class="faq-answer">
+          <p>
+            - CPU: Quad-core com multithread<br>
+            - RAM: 8GB<br>
+            - GPU: DirectX 11<br>
+            - SO: Windows 10 ou superior<br>
+            O jogo é otimizado com o motor NexusCore.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">📡 O jogo é multiplayer?</button>
+        <div class="faq-answer">
+          <p>Sim, é um jogo online tático com PvPvE, rádio e extração em equipe.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">🔧 Onde reporto bugs ou sugestões?</button>
+        <div class="faq-answer">
+          <p>No <a href="#discord">Discord oficial</a>, nos canais de feedback, ou na seção de contato do site.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">📦 Preciso comprar algo para jogar?</button>
+        <div class="faq-answer">
+          <p>O jogo é gratuito, mas exige o Garry's Mod original. Alguns conteúdos cosméticos podem ser oferecidos no futuro.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">🌌 O jogo tem história ou é só PvP?</button>
+        <div class="faq-answer">
+          <p>Existe uma narrativa em evolução, com lore revelado em documentos, eventos e interações com facções.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CSS -->
+<style>
+  .faq-question {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #FF4F00;
+    cursor: pointer;
+    border-bottom: 1px solid #222;
+    transition: background 0.3s ease;
+  }
+
+  .faq-question:hover {
+    background-color: #1a1a1a;
+  }
+
+  .faq-answer {
+    display: none;
+    padding: 15px;
+    background-color: #111;
+    border-left: 3px solid #FF4F00;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .faq-answer p {
+    margin: 0;
+  }
+
+  .faq-item.active .faq-answer {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .faq-container a {
+    color: #FF4F00;
+    text-decoration: underline;
+  }
+
+  .faq-container a:hover {
+    color: #ffa366;
+  }
+</style>
+
+<!-- JavaScript -->
+<script>
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      item.classList.toggle('active');
+    });
+  });
+</script>

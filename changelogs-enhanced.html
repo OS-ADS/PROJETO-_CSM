@@ -1,0 +1,531 @@
+<div class="changelogs-content enhanced">
+    <h1 class="page-title">🚀 Changelogs & Eventos</h1>
+    
+    <!-- Filter Controls -->
+    <div class="filter-controls">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="feature">✨ Features</button>
+        <button class="filter-btn" data-filter="event">🎮 Eventos</button>
+        <button class="filter-btn" data-filter="bug">🐛 Bug Fixes</button>
+        <button class="filter-btn" data-filter="balance">⚖️ Balanceamento</button>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <span class="stat-number">12</span>
+            <span class="stat-label">Updates Recentes</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Eventos Ativos</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">47</span>
+            <span class="stat-label">Bugs Corrigidos</span>
+        </div>
+    </div>
+
+    <!-- Timeline Container -->
+    <div class="timeline-container">
+        <div class="timeline-line"></div>
+        
+        <!-- Update Item - Enhanced -->
+        <div class="update-item feature" data-category="feature">
+            <div class="timeline-dot"></div>
+            <div class="update-badge new">NOVO</div>
+            
+            <div class="update-header">
+                <h3>🚀 Update BETA 0.75 - MultiThread Revolution</h3>
+                <time datetime="2025-01-15">Julho 20, 2025</time>
+                <div class="update-tags">
+                    <span class="tag feature">Performance</span>
+                    <span class="tag feature">Backend</span>
+                </div>
+            </div>
+            
+            <div class="update-preview">
+                <p>Diversas Otimizações e modificação do lua para suporte a MultiThread. 
+                <span class="read-more" onclick="toggleDetails(this)">Ver mais...</span></p>
+            </div>
+            
+            <div class="update-details" style="display: none;">
+                <ul class="feature-list">
+                    <li>✅ <strong>MultiThread Support:</strong> Agora o servidor pode utilizar múltiplos cores de CPU</li>
+                    <li>✅ <strong>50% mais performance</strong> em servidores com 4+ cores</li>
+                    <li>✅ <strong>Redução de 70%</strong> em lag spikes durante combates intensos</li>
+                    <li>✅ <strong>Estabilidade melhorada</strong> - menos crashes em longas sessões</li>
+                </ul>
+                
+                <div class="media-gallery">
+                    <img src="image/performance-chart.png" alt="Gráfico de Performance" class="screenshot">
+                    <img src="image/multithread-demo.gif" alt="Demo MultiThread" class="gif-preview">
+                </div>
+                
+                <div class="reactions">
+                    <button class="reaction-btn" data-reaction="👍">👍 24</button>
+                    <button class="reaction-btn" data-reaction="❤️">❤️ 12</button>
+                    <button class="reaction-btn" data-reaction="🔥">🔥 8</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Update Item - Event -->
+        <div class="update-item event" data-category="event">
+            <div class="timeline-dot"></div>
+            <div class="update-badge event">EVENTO</div>
+            
+            <div class="update-header">
+                <h3>🎮 Evento: Invasão Zumbi</h3>
+                <time datetime="2025-06-15">Junho 15-30, 2025</time>
+                <div class="update-tags">
+                    <span class="tag event">Temporário</span>
+                    <span class="tag event">PvE</span>
+                </div>
+            </div>
+            
+            <div class="update-preview">
+                <p>Evento especial de 2 semanas com hordas de zumbis, loot exclusivo e recompensas únicas!
+                <span class="read-more" onclick="toggleDetails(this)">Ver detalhes...</span></p>
+            </div>
+            
+            <div class="update-details" style="display: none;">
+                <div class="event-info">
+                    <h4>📅 Período: 15-30 de Junho</h4>
+                    <h4>🎯 Objetivo: Sobreviver às hordas zumbis</h4>
+                    <h4>🏆 Recompensas: Skins exclusivas, armas lendárias</h4>
+                </div>
+                
+                <div class="event-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 65%"></div>
+                    </div>
+                    <span>65% dos jogadores já participaram!</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Update Item - Bug Fix -->
+        <div class="update-item bug" data-category="bug">
+            <div class="timeline-dot"></div>
+            <div class="update-badge bug">FIX</div>
+            
+            <div class="update-header">
+                <h3>🛠️ Hotfix 0.74.1</h3>
+                <time datetime="2025-06-10">Junho 10, 2025</time>
+                <div class="update-tags">
+                    <span class="tag bug">Crítico</span>
+                    <span class="tag bug">Estabilidade</span>
+                </div>
+            </div>
+            
+            <div class="update-preview">
+                <p>Correção de crash crítico ao craftar itens raros. Todos os servidores foram reiniciados.
+                <span class="read-more" onclick="toggleDetails(this)">Ver lista completa...</span></p>
+            </div>
+            
+            <div class="update-details" style="display: none;">
+                <ul class="bug-list">
+                    <li>🐛 <strong>Crash fix:</strong> Ao craftar itens com qualidade lendária</li>
+                    <li>🐛 <strong>Memory leak:</strong> Em longas sessões de jogo (>3h)</li>
+                    <li>🐛 <strong>Sync issue:</strong> Inventário não salvando corretamente</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- More updates... -->
+    </div>
+
+    <!-- Upcoming Features Preview -->
+    <div class="roadmap-section">
+        <h2>🗓️ Próximas Atualizações</h2>
+        <div class="roadmap-timeline">
+            <div class="roadmap-item">
+                <div class="roadmap-date">Agosto 2025</div>
+                <div class="roadmap-content">
+                    <h4>Sistema de Facções Avançado</h4>
+                    <p>Gerenciamento de territórios, diplomacia entre facções</p>
+                    <div class="progress-mini">
+                        <div class="progress-mini-fill" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="roadmap-item">
+                <div class="roadmap-date">Setembro 2025</div>
+                <div class="roadmap-content">
+                    <h4>Novos Mapas: Zona de Guerra</h4>
+                    <p>Mapas urbanos destruídos com foco em combate CQB</p>
+                    <div class="progress-mini">
+                        <div class="progress-mini-fill" style="width: 45%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Signup -->
+    <div class="newsletter-section">
+        <h3>📧 Fique por dentro!</h3>
+        <p>Receba notificações de novas atualizações direto no seu email</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Seu email" required>
+            <button type="submit">Inscrever</button>
+        </form>
+    </div>
+</div>
+
+<style>
+/* Enhanced Changelogs Styles */
+.enhanced .filter-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.enhanced .filter-btn {
+    padding: 8px 16px;
+    border: 1px solid #FF4F00;
+    background: transparent;
+    color: #FF4F00;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.enhanced .filter-btn.active,
+.enhanced .filter-btn:hover {
+    background: #FF4F00;
+    color: #000;
+}
+
+.enhanced .stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.enhanced .stat-item {
+    text-align: center;
+}
+
+.enhanced .stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FF4F00;
+}
+
+.enhanced .stat-label {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.enhanced .timeline-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.enhanced .timeline-line {
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #FF4F00, transparent);
+}
+
+.enhanced .update-item {
+    position: relative;
+    margin-left: 60px;
+    margin-bottom: 30px;
+    background: rgba(0, 23, 46, 0.6);
+    border-radius: 8px;
+    padding: 25px;
+    border-left: none;
+}
+
+.enhanced .timeline-dot {
+    position: absolute;
+    left: -45px;
+    top: 25px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #FF4F00;
+    border: 3px solid #111;
+}
+
+.enhanced .update-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.enhanced .update-badge.new { background: #00ff88; color: #000; }
+.enhanced .update-badge.event { background: #ff6b35; color: #fff; }
+.enhanced .update-badge.bug { background: #ff4757; color: #fff; }
+
+.enhanced .update-tags {
+    display: flex;
+    gap: 8px;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.enhanced .tag {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+}
+
+.enhanced .tag.feature { background: rgba(0, 255, 136, 0.2); color: #00ff88; }
+.enhanced .tag.event { background: rgba(255, 107, 53, 0.2); color: #ff6b35; }
+.enhanced .tag.bug { background: rgba(255, 71, 87, 0.2); color: #ff4757; }
+
+.enhanced .read-more {
+    color: #FF4F00;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.enhanced .feature-list,
+.enhanced .bug-list {
+    list-style: none;
+    padding: 0;
+}
+
+.enhanced .feature-list li,
+.enhanced .bug-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.enhanced .media-gallery {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.enhanced .screenshot,
+.enhanced .gif-preview {
+    max-width: 200px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.enhanced .reactions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.enhanced .reaction-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.enhanced .reaction-btn:hover {
+    background: rgba(255, 79, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.enhanced .roadmap-section {
+    margin-top: 50px;
+    padding: 30px;
+    background: rgba(0, 23, 46, 0.4);
+    border-radius: 8px;
+}
+
+.enhanced .roadmap-timeline {
+    margin-top: 20px;
+}
+
+.enhanced .roadmap-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.enhanced .roadmap-date {
+    background: #FF4F00;
+    color: #000;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    min-width: 120px;
+    text-align: center;
+}
+
+.enhanced .progress-mini {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    margin-top: 5px;
+}
+
+.enhanced .progress-mini-fill {
+    height: 100%;
+    background: #FF4F00;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.enhanced .newsletter-section {
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px;
+    background: rgba(0, 23, 46, 0.4);
+    border-radius: 8px;
+}
+
+.enhanced .newsletter-form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.enhanced .newsletter-form input {
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    border-radius: 4px;
+    min-width: 250px;
+}
+
+.enhanced .newsletter-form button {
+    padding: 10px 20px;
+    background: #FF4F00;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .enhanced .timeline-container {
+        margin-left: 20px;
+    }
+    
+    .enhanced .update-item {
+        margin-left: 30px;
+    }
+    
+    .enhanced .timeline-line {
+        left: 15px;
+    }
+    
+    .enhanced .timeline-dot {
+        left: -30px;
+    }
+}
+</style>
+
+<script>
+// Enhanced Changelogs JavaScript
+function toggleDetails(element) {
+    const details = element.parentElement.nextElementSibling;
+    const isVisible = details.style.display !== 'none';
+    
+    details.style.display = isVisible ? 'none' : 'block';
+    element.textContent = isVisible ? 'Ver mais...' : 'Ver menos...';
+}
+
+// Filter functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const updateItems = document.querySelectorAll('.update-item');
+    
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.getAttribute('data-filter');
+            
+            // Update active button
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            // Filter items
+            updateItems.forEach(item => {
+                if (filter === 'all' || item.classList.contains(filter)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+    
+    // Auto-expire "NEW" badges after 7 days
+    const newBadges = document.querySelectorAll('.update-badge.new');
+    newBadges.forEach(badge => {
+        const updateDate = new Date(badge.closest('.update-item').querySelector('time').getAttribute('datetime'));
+        const daysSinceUpdate = (new Date() - updateDate) / (1000 * 60 * 60 * 24);
+        
+        if (daysSinceUpdate > 7) {
+            badge.style.display = 'none';
+        }
+    });
+    
+    // Reaction system
+    const reactionBtns = document.querySelectorAll('.reaction-btn');
+    reactionBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const count = parseInt(btn.textContent.split(' ')[1]);
+            btn.textContent = `${btn.getAttribute('data-reaction')} ${count + 1}`;
+            btn.style.background = 'rgba(255, 79, 0, 0.3)';
+        });
+    });
+    
+    // Newsletter form
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Obrigado por se inscrever! Você receberá notificações de novas atualizações.');
+            newsletterForm.reset();
+        });
+    }
+});
+
+// Scroll animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.update-item').forEach(item => {
+    item.style.opacity = '0';
+    item.style.transform = 'translateY(20px)';
+    item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(item);
+});
+</script>
